@@ -1,0 +1,629 @@
+/* Estilos Gerais (Aplicados a todas as páginas ou ao body principal) */
+html {
+    scroll-behavior: smooth; /* Para rolagem suave */
+    overflow-y: scroll; /* Permite rolagem vertical para todo o documento */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #fce4ec; /* Um rosa claro similar ao da imagem inicial */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Estilos dos Globos Espelhados (Comuns a ambas as páginas, ajustados por classe) */
+.disco-ball {
+    position: absolute;
+    width: 150px; /* Tamanho padrão dos globos */
+    height: 150px;
+    z-index: 1; /* Ficam atrás do conteúdo principal */
+}
+
+/* --- Estilos da Primeira Página (index.html) --- */
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Largura máxima para o conteúdo principal */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Posição dos globos na primeira página */
+.disco-ball.top-left {
+    top: -50px;
+    right: -50px;
+    left: auto;
+}
+
+.disco-ball.bottom-right {
+    bottom: -50px;
+    left: -50px;
+    right: auto;
+}
+
+.title {
+    font-size: 3em; /* Tamanho do título "CONVITE ESPECIAL" */
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+}
+
+.envelope-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.envelope {
+    width: 100%;
+    max-width: 500px; /* Tamanho máximo do envelope */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.envelope:hover {
+    transform: scale(1.02);
+}
+
+.click-instruction {
+    color: #555;
+    font-size: 1.1em;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+
+/* --- Estilos para a Página do Convite (convite.html) --- */
+
+.convite-container {
+    background-color: #fcf6ef; /* Um tom de bege claro para a segunda página */
+    min-height: 100vh; /* Garante que o container ocupe a altura mínima da tela */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    padding-bottom: 50px; /* Espaço na parte inferior */
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Posição dos globos na página do convite */
+.disco-ball.convite-page.top-left {
+    top: -50px;
+    left: -50px; /* Ajuste para o canto superior esquerdo */
+    right: auto;
+}
+
+.disco-ball.convite-page.bottom-right {
+    bottom: -50px;
+    right: -50px; /* Ajuste para o canto inferior direito */
+    left: auto;
+}
+
+.convite-header {
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10; /* Para o logo RGX ficar por cima de tudo */
+}
+
+.logo-rgx {
+    background-color: #7c7ce6; /* Cor de fundo do RGX, ajuste se for uma imagem */
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.name-age-section {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.name-text {
+    font-family: 'Dancing Script', cursive; /* Fonte cursiva para o nome */
+    font-size: 5em;
+    color: #333;
+    margin: 0;
+    line-height: 1;
+}
+
+.age-balloons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha os balões e o "st" na base */
+    margin-top: -30px; /* Ajusta a proximidade com o nome */
+}
+
+.balloon-digit {
+    width: 100px; /* Ajuste o tamanho dos balões de número */
+    height: auto;
+    margin: 0 5px;
+}
+
+.st-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    color: #333;
+    position: relative;
+    top: -10px;
+    margin-left: -10px;
+}
+
+.party-details {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.girl-photo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: -50px; /* Para a foto se sobrepor um pouco à faixa */
+    z-index: 7; /* Para a foto ficar sobre a faixa */
+}
+
+.girl-photo {
+    width: 200px; /* Tamanho da foto da Bruna */
+    height: 200px;
+    border-radius: 0%; /* Se quiser a foto circular */
+    object-fit: cover; /* Para preencher o círculo sem distorcer */
+}
+
+.party-hat {
+    position: absolute;
+    top: -30px; /* Ajuste a posição do chapéu */
+    right: 10px; /* Ajuste a posição do chapéu */
+    width: 80px; /* Tamanho do chapéu */
+    height: auto;
+    transform: rotate(55deg);
+    z-index: 8; /* Para o chapéu ficar sobre a foto */
+}
+
+/* Faixa de data/hora (totalmente em CSS) */
+.date-time-strip {
+    position: relative;
+    width: 90%; /* Largura da faixa */
+    max-width: 600px; /* Largura máxima */
+    height: 100px; /* Altura da faixa */
+    background-color: #f7d7e3; /* Cor de fundo da faixa */
+    border: 2px solid #e0b0c6; /* Borda da faixa */
+    border-radius: 10px; /* Cantos arredondados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.strip-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 7;
+    color: #333;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    align-items: center;
+}
+
+.strip-item {
+    flex: 1; /* Faz com que cada item ocupe o mesmo espaço */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Linhas pontilhadas entre os itens */
+.strip-item:nth-child(1)::after,
+.strip-item:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    right: 0; /* Posiciona a linha na direita do item */
+    top: 15%; /* Ajuste a altura */
+    bottom: 15%; /* Ajuste a altura */
+    width: 0;
+    border-right: 2px dashed #d6a1b8; /* Linha pontilhada */
+}
+
+/* Laço de fita CSS */
+.ribbon-bow {
+    position: absolute;
+    top: -25px; /* Ajuste a posição vertical do laço */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Largura total do laço */
+    height: 40px; /* Altura total do laço */
+    background-color: transparent; /* A div principal é transparente */
+    z-index: 8;
+}
+
+.ribbon-bow::before,
+.ribbon-bow::after {
+    content: '';
+    position: absolute;
+    background-color: #e0b0c6; /* Cor da fita */
+    width: 40px; /* Tamanho das "orelhas" */
+    height: 40px;
+    border-radius: 50%;
+    top: 0;
+    z-index: 7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ribbon-bow::before {
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.ribbon-bow::after {
+    right: 0;
+    transform: rotate(-45deg);
+}
+
+/* Nó central do laço */
+.ribbon-center {
+    position: absolute;
+    width: 20px; /* Tamanho do nó central */
+    height: 20px;
+    background-color: #f7d7e3; /* Cor do miolo do laço, mais claro */
+    border-radius: 50%;
+    top: -15px; /* Ajuste para centralizar no laço. É relativo ao .date-time-strip */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.invitation-text {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Playfair Display', serif; /* Fonte serifada para o texto */
+    font-size: 1.4em;
+    color: #333;
+    line-height: 1.5;
+    max-width: 500px;
+    padding: 0 20px;
+    z-index: 5;
+    position: relative;
+}
+
+.invitation-text p {
+    margin: 0;
+}
+
+.stars {
+    color: gold; /* Cor das estrelas */
+}
+
+/* --- NOVA SEÇÃO: ESPAÇO DJ --- */
+
+.space-dj-section {
+    background-color: #5c5c5c; /* Cor de fundo cinza escuro */
+    width: 100%;
+    max-width: 800px; /* Largura máxima para a seção */
+    padding: 50px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    margin-top: 50px; /* Espaçamento da seção anterior */
+    border-radius: 0px; /* Bordas levemente arredondadas */
+    overflow: hidden; /* Para os elementos absolutos não vazarem (notas, vinil) */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+/* Imagens de fundo da seção DJ */
+.music-note-silver,
+.vinyl-records {
+    position: absolute;
+    z-index: 2; /* Ficam atrás do conteúdo principal */
+    opacity: 0.8; /* Um pouco transparentes */
+}
+
+.music-note-silver {
+    width: 80px; /* Tamanho das notas musicais */
+}
+
+.note-top-left {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-15deg);
+}
+
+.note-bottom-left {
+    bottom: 20px;
+    left: 100px; /* Ajuste a posição */
+    transform: rotate(10deg);
+}
+
+.note-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-5deg);
+}
+
+.vinyl-records {
+    width: 180px; /* Tamanho dos discos de vinil */
+    top: 10px;
+    right: 10px;
+}
+
+.dj-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    color: #fce4ec; /* Rosa claro para o título */
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 5;
+}
+
+.spotify-area {
+    position: relative;
+    margin-top: 20px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente os itens internos */
+    justify-content: center; /* Centraliza verticalmente se houver espaço */
+}
+
+.spotify-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fce4ec; /* Rosa claro do botão Spotify */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    border: 5px solid #d6a1b8; /* Borda rosa escura ao redor */
+    position: relative; /* Importante para posicionar a seta e a mão em relação a ele */
+    z-index: 3; /* Garante que o botão esteja acima da seta e do texto, mas abaixo da mão */
+}
+
+.spotify-button:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.spotify-icon {
+    width: 70%; /* Tamanho do ícone Spotify dentro do botão */
+    height: auto;
+}
+
+/* Posição da SETA CURVA em relação ao BOTÃO SPOTIFY (conforme a nova imagem) */
+.curved-arrow {
+    position: absolute;
+    width: 80px; /* Tamanho da seta */
+    top: -50px; /* Mover para cima do botão */
+    right: -10px; /* Mover para a direita do botão */
+    left: auto; /* Garantir que não conflite com 'left' */
+    transform: rotate(10deg) scaleX(-1); /* Inverter horizontalmente para apontar para a esquerda */
+    z-index: 4; /* Acima do botão */
+}
+
+/* Posição do TEXTO "APERTE ESSE BOTÃO" em relação ao BOTÃO SPOTIFY (conforme a nova imagem) */
+.spotify-instruction-top {
+    position: absolute;
+    top: 10px; /* Mover para cima da seta e do botão */
+    right: -100px; /* Mover para a direita da seta */
+    left: auto; /* Garantir que não conflite com 'left' */
+    font-family: 'Playfair Display', serif; /* Fonte do texto de instrução */
+    font-size: 1em;
+    color: #fcf6ef; /* Bege claro */
+    width: 150px; /* Largura do texto */
+    text-align: left; /* Alinhar à esquerda para se adequar à seta */
+    line-height: 1.2;
+    z-index: 5; /* Acima da seta */
+}
+
+.spotify-instruction-bottom,
+.spotify-instruction-bottom-line2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    color: #fcf6ef;
+    margin-top: 20px; /* Espaçamento do botão */
+    line-height: 1.4;
+    max-width: 300px;
+    text-align: center; /* Centraliza o texto dentro de si */
+    position: relative;
+    z-index: 5;
+}
+
+.spotify-instruction-bottom-line2 .stars {
+    color: gold;
+}
+
+/* --- SEÇÃO INFERIOR --- */
+.footer-section {
+    background-color: #fcf6ef; /* Mesmo bege claro do convite-container */
+    width: 100%;
+    max-width: 800px; /* Mesma largura da seção DJ, para alinhamento visual */
+    padding: 50px 20px 20px; /* Mais padding em cima para o laço */
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 0; /* Começa imediatamente após a seção DJ */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center; /* Centraliza os itens */
+    align-items: flex-end; /* Alinha os itens na parte inferior */
+}
+
+.pink-bow {
+    position: absolute;
+    top: -30px; /* Ajuste para o laço ficar entre as seções */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Tamanho do laço rosa */
+    height: auto;
+    z-index: 10;
+}
+
+.esperovocê-text {
+    font-family: 'Dancing Script', cursive; /* Fonte cursiva para o texto */
+    font-size: 2.2em;
+    color: #333;
+    margin: 30px 0; /* Espaçamento */
+    width: 100%; /* Ocupa a largura total para ficar centralizado acima dos itens */
+    text-align: center;
+}
+
+.balloon-dog {
+    width: 100px; /* Tamanho do balão cachorro */
+    height: auto;
+    margin: 0 20px 0 0; /* Espaçamento da direita */
+    position: relative;
+    top: 10px; /* Ajuste verticalmente */
+}
+
+.gift-box {
+    width: 120px; /* Tamanho da caixa de presente */
+    height: auto;
+    margin: 0 0 0 20px; /* Espaçamento da esquerda */
+    position: relative;
+    top: 5px; /* Ajuste verticalmente */
+}
+
+/* --- NOVA SEÇÃO: LOCALIZAÇÃO --- */
+.location-section {
+    background-color: #d6a1b8; /* Um rosa médio/escuro, similar à borda da faixa */
+    width: 100%;
+    max-width: 800px;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    margin-top: 0px; /* Espaçamento da seção anterior */
+    border-radius: 0px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Para os confetes/estrelas */
+}
+
+.location-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #fcf6ef; /* Bege claro para o título */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.location-address {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    color: #fcf6ef;
+    margin-bottom: 30px;
+    line-height: 1.4;
+    max-width: 90%;
+    position: relative;
+    z-index: 5;
+}
+
+.map-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fce4ec; /* Rosa claro para o botão */
+    color: #333;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    padding: 15px 30px;
+    border-radius: 50px; /* Botão em forma de pílula */
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    cursor: pointer;
+    border: 3px solid #e0b0c6; /* Borda rosa escura */
+    position: relative;
+    z-index: 5;
+}
+
+.map-button:hover {
+    transform: scale(1.05);
+    background-color: #fff0f5; /* Um pouco mais claro no hover */
+}
+
+.map-icon {
+    width: 30px; /* Tamanho do ícone do mapa */
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Elementos decorativos */
+.confetti {
+    position: absolute;
+    width: 100px; /* Tamanho dos confetes */
+    height: auto;
+    opacity: 0.7;
+    z-index: 1; /* Atrás do conteúdo principal */
+}
+
+.confetti-left {
+    top: 10%;
+    left: 5px;
+    transform: rotate(-10deg);
+}
+
+.confetti-right {
+    bottom: 10%;
+    right: 5px;
+    transform: rotate(280deg);
+}
+
+.star-decoration {
+    position: absolute;
+    width: 90px; /* Tamanho das estrelas */
+    height: auto;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.star-top {
+    top: 30px;
+    right: 50px;
+    transform: rotate(20deg);
+}
+
+.star-bottom {
+    bottom: 30px;
+    left: 50px;
+    transform: rotate(-30deg);
+}
