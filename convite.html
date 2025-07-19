@@ -6,20 +6,32 @@
     <title>Convite de Aniversário da Bruna</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> </head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
 <body>
     <div class="convite-container">
         <img src="assets/disco-topo.png" alt="Globo Espelhado Superior" class="disco-ball top-left convite-page">
         <img src="assets/disco-fundo.png" alt="Globo Espelhado Inferior" class="disco-ball bottom-right convite-page">
 
-        <section class="name-age-section">
-            <p class="name-text">Bruna's</p>
-            <div class="age-balloons">
-                <img src="assets/balao_1.png" alt="Balão número 2" class="balloon-digit">
-                <img src="assets/balao_2.png" alt="Balão número 1" class="balloon-digit">
-                <span class="st-text">st</span>
-            </div>
-        </section>
+      <section class="name-age-section">
+    <div class="name-text-curved">
+        <svg width="250" height="100">
+            <path id="nameCurve" fill="none" stroke="none" d="M 20 80 Q 125 10 230 80" />
+            <text>
+                <textPath href="#nameCurve" startOffset="50%" text-anchor="middle">
+                    Bruna's
+                </textPath>
+            </text>
+        </svg>
+    </div>
+
+    <div class="age-balloons">
+        <img src="assets/balao_1.png" alt="Balão número 2" class="balloon-digit">
+        <img src="assets/balao_2.png" alt="Balão número 1" class="balloon-digit">
+        <span class="st-text">st</span>
+    </div>
+</section>
 
         <section class="party-details">
             <div class="girl-photo-wrapper">
@@ -38,7 +50,7 @@
 
         <section class="invitation-text">
             <p>Te convido para celebrar</p>
-            <p>a chegada dos meus <span class="stars">🌟 25 🌟</span> em grande estilo,</p>
+            <p>a chegada dos meus <span class="stars"> 🌸 25 🌸</span> em grande estilo.</p>
             </section>
 
         <section class="space-dj-section">
@@ -51,8 +63,8 @@
 
             <div class="spotify-area">
                 <img src="assets/seta-curva.png" alt="Seta Curva" class="curved-arrow">
-                <p class="spotify-instruction-top">APERTE ESSE BOTÃO</p>
-                <a href="SUA_URL_DA_PLAYLIST_DO_SPOTIFY_AQUI" target="_blank" class="spotify-button">
+                <p class="spotify-instruction-top">aperte esse botão</p>
+                <a href="https://open.spotify.com/playlist/1DAK68vum2hUMZvsSCMsip?si=4e560402512d4904&pt=ad8b643a6efcc8a7ea8b90afe928ad72" target="_blank" class="spotify-button">
                     <img src="assets/spotify.png" alt="Ícone Spotify" class="spotify-icon">
                 </a>
                 <p class="spotify-instruction-bottom">E ADICIONE AS MÚSICAS QUE QUISER</p>
@@ -63,7 +75,7 @@
         <section class="location-section">
             <h2 class="location-title">LOCALIZAÇÃO</h2>
             <p class="location-address">Rua Yoneko Shime 333</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Espaço+de+Festas+XYZ,+Rua+das+Flores,+123,+Centro" target="_blank" class="map-button">
+            <a href="https://maps.app.goo.gl/YQsQghjGpQNyC6fc9" target="_blank" class="map-button">
                 <img src="assets/pin.png" alt="Ícone de Localização" class="map-icon"> <span class="map-button-text">VER NO MAPA</span>
             </a>
             <img src="assets/confete.png" alt="Confetes" class="confetti confetti-left">

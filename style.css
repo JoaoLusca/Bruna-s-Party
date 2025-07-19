@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* Estilos Gerais (Aplicados a todas as páginas ou ao body principal) */
 html {
     scroll-behavior: smooth; /* Para rolagem suave */
@@ -14,6 +19,7 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden; /* Isso previne qualquer rolagem horizontal */
 }
 
 /* Estilos dos Globos Espelhados (Comuns a ambas as páginas, ajustados por classe) */
@@ -98,6 +104,49 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para o contêiner do SVG (para posicionamento) */
+.name-text-curved {
+    width: 250px; /* Mantenha a largura do SVG */
+    height: 100px; /* Mantenha a altura do SVG */
+    display: flex; /* Garante que o SVG dentro dele seja centralizado se for menor */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Mantenha para garantir que o texto não seja sobreposto por outros elementos fora desta seção, se houver. */
+}
+
+/* Estilizando o texto dentro do SVG */
+.name-text-curved text {
+    font-family: 'Dancing Script', cursive; /* Use a fonte que você deseja */
+    font-size: 50px; /* Ajuste o tamanho da fonte */
+    fill: #f7d7e3; /* Cor do texto (o equivalente a 'color' para SVG) */
+    /* Outras propriedades CSS para texto podem funcionar, como font-weight, text-shadow, etc. */
+    font-weight: 700;
+}
+
+/* Ajustes para responsividade no SVG */
+.name-text-curved svg {
+    width: 100%; /* Faz o SVG ocupar a largura do seu contêiner */
+    height: auto; /* Mantém a proporção */
+}
+
+.name-text-curved svg text {
+    font-family: 'Dancing Script', cursive; /* Sua fonte de caligrafia */
+    font-size: 21vw; /* <-- ESTA É A LINHA QUE VOCÊ VAI MUDAR */
+    fill: #efc9d0; /* Cor dourada/amarela para o texto */
+    font-weight: 700; /* Negrito */
+}
+/* Exemplo de media query para ajustar em telas menores */
+@media (max-width: 768px) {
+    .name-text-curved {
+        /* Ajuste o posicionamento para telas menores */
+        top: 5vw; /* Exemplo de ajuste responsivo */
+        /* Outros ajustes de posicionamento */
+    }
+    .name-text-curved text {
+        font-size: 8vw; /* Fonte responsiva */
+    }
+}
+
 /* Posição dos globos na página do convite */
 .disco-ball.convite-page.top-left {
     top: -50px;
@@ -132,9 +181,17 @@ body {
 }
 
 .name-age-section {
+     display: flex; /* Transforma em um contêiner flexível */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center;   /* Centraliza horizontalmente os itens dentro da seção */
+    justify-content: center; /* Centraliza verticalmente se a seção tiver altura definida */
+    position: relative; /* Importante para posicionamento absoluto de filhos, se usar */
+    top: 10px; left: 10px; width: 10px; height: 10px; 
+    /* Defina aqui o tamanho e posição geral da sua seção */
+    min-height: 200px; /* Exemplo: Garante uma altura mínima para os elementos aparecerem */
+    padding-top: 50px; /* Pode adicionar um padding para afastar do topo da página */
     text-align: center;
     margin-top: 20px;
-    position: relative;
     z-index: 5;
 }
 
@@ -147,10 +204,11 @@ body {
 }
 
 .age-balloons {
+    gap: 1vw;
     display: flex;
     justify-content: center;
     align-items: flex-end; /* Alinha os balões e o "st" na base */
-    margin-top: -30px; /* Ajusta a proximidade com o nome */
+    margin-top: -69px; /* Ajusta a proximidade com o nome */
 }
 
 .balloon-digit {
@@ -164,8 +222,8 @@ body {
     font-size: 2em;
     color: #333;
     position: relative;
-    top: -10px;
-    margin-left: -10px;
+    top: -43px;
+    margin-left: -25px;
 }
 
 .party-details {
@@ -194,10 +252,10 @@ body {
 .party-hat {
     position: absolute;
     top: -30px; /* Ajuste a posição do chapéu */
-    right: 10px; /* Ajuste a posição do chapéu */
-    width: 80px; /* Tamanho do chapéu */
+    right: -3px; /* Ajuste a posição do chapéu */
+    width: 90px; /* Tamanho do chapéu */
     height: auto;
-    transform: rotate(55deg);
+    transform: rotate(54deg);
     z-index: 8; /* Para o chapéu ficar sobre a foto */
 }
 
@@ -208,7 +266,6 @@ body {
     max-width: 600px; /* Largura máxima */
     height: 100px; /* Altura da faixa */
     background-color: #f7d7e3; /* Cor de fundo da faixa */
-    border: 2px solid #e0b0c6; /* Borda da faixa */
     border-radius: 10px; /* Cantos arredondados */
     display: flex;
     justify-content: center;
@@ -224,11 +281,12 @@ body {
     height: 100%;
     position: relative;
     z-index: 7;
-    color: #333;
+    color: white;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
     align-items: center;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .strip-item {
@@ -249,7 +307,7 @@ body {
     top: 15%; /* Ajuste a altura */
     bottom: 15%; /* Ajuste a altura */
     width: 0;
-    border-right: 2px dashed #d6a1b8; /* Linha pontilhada */
+    border-right: 2px dashed #efc9d0; /* Linha pontilhada */
 }
 
 /* Laço de fita CSS */
@@ -305,7 +363,7 @@ body {
     text-align: center;
     margin-top: 40px;
     font-family: 'Playfair Display', serif; /* Fonte serifada para o texto */
-    font-size: 1.4em;
+    font-size: 21px;
     color: #333;
     line-height: 1.5;
     max-width: 500px;
@@ -319,7 +377,7 @@ body {
 }
 
 .stars {
-    color: gold; /* Cor das estrelas */
+    color: #f25081; /* Cor das estrelas */
 }
 
 /* --- NOVA SEÇÃO: ESPAÇO DJ --- */
@@ -354,27 +412,30 @@ body {
 }
 
 .note-top-left {
+    width: 9vw;
     top: 20px;
     left: 20px;
     transform: rotate(-15deg);
 }
 
 .note-bottom-left {
+    width: 9vw;
     bottom: 20px;
     left: 100px; /* Ajuste a posição */
     transform: rotate(10deg);
 }
 
 .note-bottom-right {
+    width: 9vw;
     bottom: 20px;
     right: 20px;
     transform: rotate(-5deg);
 }
 
 .vinyl-records {
-    width: 180px; /* Tamanho dos discos de vinil */
+    width: 101px; /* Tamanho dos discos de vinil */
     top: 10px;
-    right: 10px;
+    right: -12px;
 }
 
 .dj-title {
@@ -385,6 +446,7 @@ body {
     margin-bottom: 40px;
     position: relative;
     z-index: 5;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5)
 }
 
 .spotify-area {
@@ -408,7 +470,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
-    border: 5px solid #d6a1b8; /* Borda rosa escura ao redor */
+    border: 5px solid #efc9d0; /* Borda rosa escura ao redor */
     position: relative; /* Importante para posicionar a seta e a mão em relação a ele */
     z-index: 3; /* Garante que o botão esteja acima da seta e do texto, mas abaixo da mão */
 }
@@ -425,22 +487,22 @@ body {
 /* Posição da SETA CURVA em relação ao BOTÃO SPOTIFY (conforme a nova imagem) */
 .curved-arrow {
     position: absolute;
-    width: 80px; /* Tamanho da seta */
-    top: -50px; /* Mover para cima do botão */
-    right: -10px; /* Mover para a direita do botão */
+    width: 78px; /* Tamanho da seta */
+    top: -60px; /* Mover para cima do botão */
+    right: 25px; /* Mover para a direita do botão */
     left: auto; /* Garantir que não conflite com 'left' */
-    transform: rotate(10deg) scaleX(-1); /* Inverter horizontalmente para apontar para a esquerda */
+    transform: rotate(-9deg) scaleX(-1); /* Inverter horizontalmente para apontar para a esquerda */
     z-index: 4; /* Acima do botão */
 }
 
 /* Posição do TEXTO "APERTE ESSE BOTÃO" em relação ao BOTÃO SPOTIFY (conforme a nova imagem) */
 .spotify-instruction-top {
     position: absolute;
-    top: 10px; /* Mover para cima da seta e do botão */
-    right: -100px; /* Mover para a direita da seta */
+    top: 2px; /* Mover para cima da seta e do botão */
+    right: -62px; /* Mover para a direita da seta */
     left: auto; /* Garantir que não conflite com 'left' */
     font-family: 'Playfair Display', serif; /* Fonte do texto de instrução */
-    font-size: 1em;
+    font-size: 13px;
     color: #fcf6ef; /* Bege claro */
     width: 150px; /* Largura do texto */
     text-align: left; /* Alinhar à esquerda para se adequar à seta */
@@ -494,8 +556,8 @@ body {
 
 .esperovocê-text {
     font-family: 'Dancing Script', cursive; /* Fonte cursiva para o texto */
-    font-size: 2.2em;
-    color: #333;
+    font-size: 45px;
+    color:#efc9d0;
     margin: 30px 0; /* Espaçamento */
     width: 100%; /* Ocupa a largura total para ficar centralizado acima dos itens */
     text-align: center;
@@ -519,7 +581,7 @@ body {
 
 /* --- NOVA SEÇÃO: LOCALIZAÇÃO --- */
 .location-section {
-    background-color: #d6a1b8; /* Um rosa médio/escuro, similar à borda da faixa */
+    background-color: #efc9d0; /* Um rosa médio/escuro, similar à borda da faixa */
     width: 100%;
     max-width: 800px;
     padding: 50px 20px;
@@ -543,6 +605,7 @@ body {
     margin-bottom: 20px;
     position: relative;
     z-index: 5;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5)
 }
 
 .location-address {
@@ -554,6 +617,7 @@ body {
     max-width: 90%;
     position: relative;
     z-index: 5;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .map-button {
