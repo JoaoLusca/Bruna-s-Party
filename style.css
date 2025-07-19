@@ -180,8 +180,8 @@ body {
 .girl-photo-wrapper {
     position: relative;
     display: inline-block;
-    margin-bottom: -50px; /* Para a foto se sobrepor um pouco à faixa */
-    z-index: 7; /* Para a foto ficar sobre a faixa */
+    margin-bottom: -70px; /* Para a foto se sobrepor um pouco à faixa */
+    z-index: 6; /* Para a foto ficar sobre a faixa */
 }
 
 .girl-photo {
