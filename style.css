@@ -563,6 +563,14 @@ body {
     text-align: center;
 }
 
+.confirmerpesenca-text {
+    font-family: 'Dancing Script', cursive; /* Fonte cursiva para o texto */
+    font-size: 45px;
+    color:#efc9d0;
+    margin: 30px 0; /* Espaçamento */
+    width: 100%; /* Ocupa a largura total para ficar centralizado acima dos itens */
+    text-align: center;
+}
 .balloon-dog {
     width: 100px; /* Tamanho do balão cachorro */
     height: auto;
@@ -618,6 +626,29 @@ body {
     position: relative;
     z-index: 5;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+.confirmar-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fce4ec; /* Rosa claro para o botão */
+    color: #755959;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.3em;
+    padding: 15px 30px;
+    border-radius: 50px; /* Botão em forma de pílula */
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.confirmar-button:hover {
+    transform: scale(1.05);
+    background-color: #fff0f5; /* Um pouco mais claro no hover */
 }
 
 .map-button {
